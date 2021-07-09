@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script>
+            function update(message){
+                location.href = '/update?no='+message
+            }
+            function del(message){
+                location.href = "/del?no="+message
+            
+            }
+            function list(message){
+                location.href = '/list?no'+message
+            } 
+        </script>
+        <%- include("./head.ejs")%>
+    </head>
+    <body>
+        <%- include("./nav.ejs")%>
+        <div class="container">
+
+            <form action="update2" method="POST">
+
+                <input type="hidden" value="<%=content[0].No%>" name="no">
+                <input type="hidden" value="<%=content[0].post_id%>" name="post_id">
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="span_title">글 제목</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="title">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="span_content">내용</span>
+                    <textarea class="form-control"  id="floatingTextarea" name="content" style="height: 400px" name="content"></textarea>
+                   
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="span_img">이미지링크</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="img">
+                </div>
+                
+            <div align="center">
+                <input class="btn btn-success" type="submit" value="수정">
+            </div>
+            
+            </form>
+            
+            <!-- <button onclick="update('<%=content[0].No%>')">수정</button>
+            <button onclick="del('<%=content[0].No%>')">삭제</button> -->
+            <div align="center">
+                <button class="btn btn-secondary" onclick="list()">목록</button>
+            </div>
+            
+        </div>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/signup2" method="post">
+            <input type="text" placeholder="ID" name="post_id">
+            <input type="password" placeholder="PASSWORD" name="password">
+            <input type="text" placeholder="NAME" name="name">
+            <input type="text" placeholder="DIVISION" name="division">
+            <input type="number" placeholder="LINKCODE" name="linkcode">
+            <input type="submit" value="signup">
+        </form>
+    </body>
+</html> 
+
+
+<table class="table table-striped table-hover">
+                <!-- <tr>
+                    <th>글 번호</th>
+                    <td>
+                        
+                        <input type="" value="<%=content[0].No%>" name="no">
+                    </td>
+                </tr> -->
+                <tr>
+                    
+                    <th>글 제목</th>
+                    <td>
+                        <input type="text" value="<%=content[0].tltle%>" name="title">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>글 내용</th>
+                    <td><input type="text" value="<%=content[0].content%>" name="content"></td>
+                </tr>
+                <tr>
+                    <th>이미지</th>
+                    <td><input type="text" value="<%=content[0].img%>" name="img"></td>
+                </tr>
+            </table>

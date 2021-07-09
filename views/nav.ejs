@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/main" style="margin-left:100px">NAVER</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/main">Home</a>
+          <li class="nav-item dropdown">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/main/board">write</a>
+              <li class="nav-item dropdown">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/main/data_list">list</a>
+                  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                <% if(name == "none"){ %>
+              
+                    <li><a class="dropdown-item" href="/">Login</a></li>
+                <%}else{%>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                <%}%>
+              
+            </ul>
+          </li>
+        </ul>
+        <%if(name =="none"){%>
+            <span style="color: white;">로그인이 필요합니다</span>
+        <%}else{%>
+            <span style="color: white;"><%=name%>님 환영합니다~</span>
+        <%}%>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
